@@ -18,4 +18,4 @@ tidy <- gather(wine, Attribute, Value, fixed.acidity:quality)
 tidy$qlty <- as.factor(tidy$qlty)
 tidy$Attribute <- as.factor(tidy$Attribute)
 
-qt <- tidy%>%group_by(qlty, Attribute)%>%summarise(avg=mean(Value))
+qt <- tidy%>%group_by(type,Attribute,qlty)%>%summarise(avg=mean(Value))

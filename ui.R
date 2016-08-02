@@ -38,8 +38,8 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      plotlyOutput("scatter")
-      #plotlyOutput("box")
+      plotlyOutput("scatter"),
+      plotlyOutput("qlty")
     )
   )
 ))

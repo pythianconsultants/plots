@@ -25,8 +25,10 @@ shinyServer(function(input, output) {
     ggplotly(p)
     
       })
+  
   output$qlty <- renderPlotly({
-    q <- ggplot(tidy, aes_string(x='qlty',fill="Attribute"))+geom_bar()+facet_grid(.~type)
+    q <- ggplot(qt, aes_string(x='Attribute', y='log(avg)',fill="type"))+geom_bar(stat='identity')+facet_wrap(type~qlty)
+    ggplotly(q)
   })
 })
 
